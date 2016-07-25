@@ -1,0 +1,53 @@
+contract Asset {
+
+    uint256 public timestamp = now;
+    uint256 public expiration = 60;
+    address public owner;
+
+
+    event Update(uint _timestamp);
+    event transferEvent(string msg);
+    
+
+    address public recipient;
+
+    function Asset() {
+        owner = msg.sender;
+        timestamp = block.timestamp;
+    }
+    
+    
+    function assign(address _to) {
+        recipient = _to;
+    }
+    
+    modifier onlyOwner { if (owner != msg.sender) throw; _ }
+    function updateStatus() onlyOwner {
+        timestamp = now;
+        Update(timestamp);
+    }
+    
+    function setExpiration(uint nSecond) onlyOwner {
+        expiration = nSecond;
+    }
+    
+    function hasExpired() constant returns (bool expired) {
+        if( now > timestamp + expiration ) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    
+    function transfer ()  {
+        var totalAmount = this.balance;
+        if( hasExpired() ) {
+            if( !recipient.send(totalAmount)) {
+                throw;
+            }
+            transferEvent("amount transfered");
+        } else {
+            transferEvent("amount not transfered");
+        }
+    }
+}
