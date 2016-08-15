@@ -6,13 +6,8 @@ contract Pinger is Pingable {
 		owner = msg.sender;
 	}
 
-	function ping () {
+	function ping () onlyOwner {
 		last_ping = now;
 		Ping(msg.sender, last_ping);
-	}
-
-	modifier onlyOwner {
-		if (msg.sender == owner) _
-		else throw;
 	}
 }
