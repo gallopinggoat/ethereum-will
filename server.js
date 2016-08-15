@@ -1,12 +1,10 @@
-var http = require("http-server")
-var fs = require("fs")
-
-
 const PORT = 8000;
+var http = require('http');
+var server = http.createServer( (request, response) => {
+	console.log(request.body);
+});
 
 
-http.createServer( (request, response) => {
-	console.log(request);
-}).listen(PORT, () => {
+server.listen(PORT, ()=> {
 	console.log("Server listening on port %s", PORT);
 });

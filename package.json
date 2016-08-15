@@ -21,7 +21,9 @@
 	"author": "digi-death",
 	"license": "MIT",
 	"dependencies": {
-	"web3": ">=0.15.3"
+	"web3": ">=0.15.3",
+	"express": "",
+	"fkill": ""
 	},
 	"bugs": {
 	"url": "https://github.com/kidwai/ethereum-will/issues"

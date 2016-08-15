@@ -31,7 +31,7 @@ $ geth/accounts/new
 $ geth/accounts/rain 0
 ```
 
-Start a node.
+Start a node. Enter "lol" as password.
 
 ```
 $ geth/node/start
