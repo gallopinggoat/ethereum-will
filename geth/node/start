@@ -1,0 +1,2 @@
+geth --testnet --rpc --rpcapi="web3,eth,db,net" --rpcaddr="0.0.0.0" --rpccorsdomain="*"  \
+--unlock 0

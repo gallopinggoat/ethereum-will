@@ -18,16 +18,31 @@ $ npm run build
 ```
 
 
-
-Delete previous ethereum data directory and DAG file, and start
-a new one connected to the testnet with 5 unlocked accounts.
-
+Create a testnet account.
 
 ```
-$ geth/purge ethash
-$ geth/start
+$ geth/accounts/new
 ```
 
 
-A wallet creator should then open `dapp/creator/index.html` in chrome.
-A wallet recoverer should then open `dapp/recoverer/index.html` in chrome.
+[TODO] Give it some free Ether 
+
+```
+$ geth/accounts/rain 0
+```
+
+Start a node.
+
+```
+$ geth/node/start
+```
+
+
+Start a local server.
+
+```
+$ node server
+```
+
+
+Open chrome to http://localhost:8000.

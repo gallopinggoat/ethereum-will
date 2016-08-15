@@ -15,7 +15,8 @@
 	],
 	"scripts": {
 		"build": "make -C contracts",
-		"build-dapp": "browserify dapp/src/app.js -o dapp/bin/app.bundle.js"
+		"build-dapp": "browserify public/js/contracts.app.js -o public/js/contracts.app.bundle.js",
+		"start": "node dapp/server.js"
 	},
 	"author": "digi-death",
 	"license": "MIT",
